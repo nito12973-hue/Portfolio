@@ -1,0 +1,36 @@
+@model Portfolio.Models.EducationViewModel
+@{
+    ViewData["Title"] = "Formation";
+}
+
+<section class="bg-white rounded-4 shadow-sm p-4 p-lg-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <p class="text-uppercase text-muted small mb-1">Formation</p>
+            <h1 class="fw-bold mb-0">Parcours académique</h1>
+        </div>
+        <span class="badge bg-secondary text-white">2024 - 2026</span>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-8">
+            <h2 class="h5 fw-semibold mb-2">@Model.Institution</h2>
+            <p class="mb-3 text-muted">@Model.Program</p>
+            <p class="text-muted mb-0">J’approfondis les architectures orientées services, l’administration de bases de données relationnelles et l’optimisation des systèmes d’exploitation pour des environnements productifs.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="border-start border-4 border-primary ps-3">
+                <p class="text-uppercase text-muted small mb-2">Spécialisations</p>
+                <ul class="list-unstyled mb-0 fw-semibold">
+                    @foreach (var spec in Model.Specializations)
+                    {
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            @spec
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

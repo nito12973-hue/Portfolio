@@ -1,0 +1,46 @@
+[
+  {
+    "Title": "SunuMarket",
+    "Description": "Plateforme e-commerce pour le march\u00E9 s\u00E9n\u00E9galais, g\u00E9rant produits, commandes et utilisateurs avec une interface fluide.",
+    "Technologies": [
+      "Next.js",
+      "Node.js",
+      "MongoDB"
+    ],
+    "Link": "https://github.com/lamarana/SunuMarket",
+    "Featured": true
+  },
+  {
+    "Title": "Gestion du personnel SQL",
+    "Description": "Base relationnelle avec proc\u00E9dures stock\u00E9es et rapports qui centralisent les donn\u00E9es RH et facilitent la prise de d\u00E9cision.",
+    "Technologies": [
+      "SQL Server",
+      "Stored Procedures",
+      "Power BI"
+    ],
+    "Link": "https://github.com/lamarana/sql-personnel",
+    "Featured": false
+  },
+  {
+    "Title": "Filtrage de nombres premiers",
+    "Description": "Application Python pour g\u00E9n\u00E9rer et filtrer une suite de nombres premiers adapt\u00E9e aux besoins de recherche de performances.",
+    "Technologies": [
+      "Python",
+      "Flask",
+      "Pandas"
+    ],
+    "Link": "https://github.com/lamarana/prime-filter",
+    "Featured": false
+  },
+  {
+    "Title": "Refuge animalier DB",
+    "Description": "Mod\u00E8le de base documentaire pour g\u00E9rer les animaux, les adopteurs et les campagnes, pens\u00E9 pour MongoDB Atlas.",
+    "Technologies": [
+      "MongoDB",
+      "Aggregation",
+      "Express"
+    ],
+    "Link": "https://github.com/lamarana/refuge-db",
+    "Featured": false
+  }
+]

@@ -1,0 +1,47 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6fb;
+  color: #0f172a;
+  font-family: inherit;
+  scroll-behavior: smooth;
+}
+
+main {
+  min-height: 60vh;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.15);
+}
+
+.avatar img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+.badge {
+  font-size: 0.82rem;
+}
+
+.form-control,
+.form-select,
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext {
+  border-radius: 0.75rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

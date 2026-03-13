@@ -1,0 +1,150 @@
+@{
+    ViewData["Title"] = "Accueil";
+    var featuredProject = ViewBag.FeaturedProject as Portfolio.Models.ProjectCard;
+    var profile = ViewBag.ProfileData as Portfolio.Models.ProfileData ?? new Portfolio.Models.ProfileData();
+    var profileSavedMessage = TempData["ProfileSaved"] as string;
+}
+
+<section class="bg-white rounded-4 shadow-sm p-4 p-lg-5">
+    <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-1">
+                <div>
+                    <p class="text-uppercase text-muted small mb-1">Portfolio professionnel</p>
+                    <h1 class="display-5 fw-bold mb-2">Bonjour, je suis @profile.Name</h1>
+                </div>
+                <button id="profile-edit-trigger" type="button" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2">
+                    <i class="bi bi-pencil-fill"></i>
+                    <span>Modifier le profil</span>
+                </button>
+            </div>
+            <p class="small text-uppercase mb-2 text-muted">@profile.Title</p>
+            <p class="lead text-muted mb-4">@profile.SubTitle</p>
+            <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-primary btn-lg" asp-action="Projects">Voir mes projets</a>
+                <a class="btn btn-outline-secondary btn-lg" asp-action="Contact">Me contacter</a>
+            </div>
+            @if (!string.IsNullOrWhiteSpace(profileSavedMessage))
+            {
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    @profileSavedMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+                </div>
+            }
+        </div>
+        <div class="col-lg-5 text-center">
+            <div class="avatar rounded-circle border border-4 border-white shadow" style="display:inline-block;background-color:#f8f9fa;">
+                <img src="@profile.AvatarUrl" alt="Avatar de @profile.Name" class="img-fluid rounded-circle" />
+            </div>
+            <p class="mt-3 text-muted small mb-0">@profile.Title</p>
+        </div>
+    </div>
+</section>
+
+<section class="mt-4">
+    <div class="bg-primary bg-opacity-10 border border-primary rounded-4 p-4">
+        <p class="mb-0 text-primary fw-semibold">Administrateur de bases de données & développeur web/mobile</p>
+        <p class="mb-0 text-muted">Je combine la gestion des performances, la sécurité des données et le déploiement d’interfaces web et mobiles pour offrir des solutions fiables de bout en bout.</p>
+    </div>
+</section>
+
+<section class="row row-cols-1 row-cols-md-4 g-4 mt-5">
+    <article class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="badge bg-primary rounded-pill px-3 py-2">Développement Web</span>
+                    <i class="bi bi-laptop fs-4 text-primary"></i>
+                </div>
+                <p class="card-text text-muted">Création d’interfaces React / Next.js alimentées par des API .NET ou Node pour des expériences performantes.</p>
+            </div>
+        </div>
+    </article>
+    <article class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="badge bg-secondary rounded-pill px-3 py-2">Bases de données</span>
+                    <i class="bi bi-server fs-4 text-secondary"></i>
+                </div>
+                <p class="card-text text-muted">Modélisation MySQL / PostgreSQL, optimisation MongoDB, supervision et scripts d’automatisation.</p>
+            </div>
+        </div>
+    </article>
+    <article class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="badge bg-success rounded-pill px-3 py-2">Solutions modernes</span>
+                    <i class="bi bi-lightning-charge fs-4 text-success"></i>
+                </div>
+                <p class="card-text text-muted">Approche pragmatique du prototypage, des tests unitaires et du déploiement cloud.</p>
+            </div>
+        </div>
+    </article>
+    <article class="col">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <span class="badge bg-info text-dark rounded-pill px-3 py-2">Admin bases de données</span>
+                    <i class="bi bi-hdd-network fs-4 text-info"></i>
+                </div>
+                <p class="card-text text-muted">Administration de clusters, sécurité des accès, monitoring et automatisation pour garantir la fiabilité des données.</p>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section class="mt-5">
+    <div class="d-flex justify-content-between align-items-end">
+        <div>
+            <p class="text-uppercase text-muted small mb-1">Focus</p>
+            <h2 class="fw-bold mb-0">Projets récents</h2>
+        </div>
+        <a class="btn btn-outline-primary btn-sm" asp-action="Projects">Tous les projets</a>
+    </div>
+    <div class="card mt-3 border-0 shadow-sm">
+        <div class="card-body">
+            @if (featuredProject is not null)
+            {
+                <div class="row g-3 align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="fw-semibold mb-2">@featuredProject.Title</h3>
+                        <p class="mb-1 text-muted">@featuredProject.Description</p>
+                        <div class="d-flex flex-wrap gap-2 small text-muted">
+                            @foreach (var tech in featuredProject.Technologies)
+                            {
+                                <span class="badge bg-light text-dark">@tech</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a class="btn btn-sm btn-outline-secondary" href="@featuredProject.Link" target="_blank" rel="noopener noreferrer">Voir le projet</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p class="mb-0 text-muted">Les projets seront affichés ici dès qu’ils seront ajoutés via la section “Ajouter un projet”.</p>
+            }
+        </div>
+    </div>
+</section>
+
+@section Scripts
+{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const trigger = document.getElementById("profile-edit-trigger");
+            trigger?.addEventListener("click", function () {
+                const key = prompt("Entrez la clé Admin pour modifier le profil :");
+                if (!key) {
+                    return;
+                }
+                const url = new URL("/ProfileAdmin/Edit", window.location.origin);
+                url.searchParams.set("key", key);
+                window.location.href = url.toString();
+            });
+        });
+    </script>
+}

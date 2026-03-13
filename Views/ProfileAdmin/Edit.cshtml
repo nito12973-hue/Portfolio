@@ -1,0 +1,52 @@
+@model Portfolio.Models.ProfileFormModel
+@{
+    ViewData["Title"] = "Modifier le profil";
+}
+
+<section class="bg-white rounded-4 shadow-sm p-4 p-lg-5">
+    <div class="d-flex justify-content-between align-items-start mb-4">
+        <div>
+            <p class="text-uppercase text-muted small mb-1">Profil administrateur</p>
+            <h1 class="fw-bold mb-0">Modifier le texte et l’avatar</h1>
+        </div>
+        <span class="badge bg-info text-dark">clé requise</span>
+    </div>
+
+    <form asp-action="Edit" method="post" class="row g-3">
+        <div class="col-12 col-md-6">
+            <label asp-for="Name" class="form-label">Nom complet</label>
+            <input asp-for="Name" class="form-control" />
+            <span class="text-danger small" asp-validation-for="Name"></span>
+        </div>
+        <div class="col-12 col-md-6">
+            <label asp-for="Title" class="form-label">Titre principal</label>
+            <input asp-for="Title" class="form-control" />
+            <span class="text-danger small" asp-validation-for="Title"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="SubTitle" class="form-label">Sous-titre (décrivez votre offre)</label>
+            <input asp-for="SubTitle" class="form-control" />
+            <span class="text-danger small" asp-validation-for="SubTitle"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="Bio" class="form-label">Bio / accroche légère</label>
+            <textarea asp-for="Bio" rows="4" class="form-control"></textarea>
+            <span class="text-danger small" asp-validation-for="Bio"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="AvatarUrl" class="form-label">Chemin vers l’avatar</label>
+            <input asp-for="AvatarUrl" class="form-control" placeholder="/images/avatar.svg" />
+            <span class="text-muted small d-block mb-1">Placez l’image dans `wwwroot/images` et indiquez le chemin relatif.</span>
+            <span class="text-danger small" asp-validation-for="AvatarUrl"></span>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-link">Annuler</a>
+        </div>
+    </form>
+</section>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
