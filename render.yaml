@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: portfolio
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py loaddata projects && python manage.py collectstatic --noinput
+    startCommand: gunicorn portfolio_project.wsgi --bind 0.0.0.0:8000
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        sync: false
+      - key: DJANGO_DEBUG
+        value: "0"
+      - key: DJANGO_ALLOWED_HOSTS
+        value: ".onrender.com"

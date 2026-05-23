@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Administration - Lamarana Diallo{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="section-header">
+        <p>Tableau de bord</p>
+        <h1>Gère ton portfolio</h1>
+        <p class="lead text-muted">Tu peux éditer ton profil, tes compétences, consulter les projets et accéder aux formulaires pour ajouter ou modifier un projet.</p>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-panel">
+            <h3>Profil public</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ profile_form.as_p }}
+                <button type="submit" class="btn btn-custom mt-3">Mettre à jour</button>
+            </form>
+        </div>
+
+        <div class="contact-card">
+            <h3>Compétences</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ skill_formset.management_form }}
+                <div class="row">
+                    {% for form in skill_formset.forms %}
+                        <div class="col-md-6">
+                            <div class="card p-3 mb-3 bg-transparent border border-1">
+                                {{ form.as_p }}
+                                {% if form.instance.pk %}
+                                    <label class="form-check-label">
+                                        {{ form.DELETE }} Supprimer cette section
+                                    </label>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn btn-custom mt-3">Enregistrer les compétences</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3>Projets en base</h3>
+            <a href="{% url 'portfolio:project_create' %}" class="btn btn-outline-primary btn-sm">Créer un projet</a>
+        </div>
+        <div class="row g-3">
+            {% for project in projects %}
+                <div class="col-md-6">
+                    <div class="card bg-dark text-white border border-secondary">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ project.title }}</h4>
+                            <p class="card-text text-muted">{{ project.description|truncatechars:120 }}</p>
+                            <a class="btn btn-outline-light btn-sm" href="{% url 'portfolio:project_edit' project.pk %}">Modifier</a>
+                            <form class="d-inline" method="post" action="{% url 'portfolio:project_delete' project.pk %}">
+                                {% csrf_token %}
+                                <button class="btn btn-outline-danger btn-sm" type="submit">Supprimer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Aucun projet enregistré.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

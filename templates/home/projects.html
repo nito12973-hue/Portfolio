@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Projets — {{ profile.name }}{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center animate-slide-up">
+            <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                <span class="gradient-text">Mes Projets</span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                Découvrez l'ensemble de mes réalisations, des applications web aux solutions de bases de données
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in projects %}
+                <article class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" style="animation-delay: {{ forloop.counter0|floatformat:1 }}s;">
+                    <!-- Project Image -->
+                    <div class="relative">
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full h-56 object-cover" />
+                        {% else %}
+                            <div class="w-full h-56 bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
+                                <svg class="w-20 h-20 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                            </div>
+                        {% endif %}
+                        {% if project.featured %}
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-yellow-400 text-yellow-900 rounded-full text-xs font-bold shadow-lg">⭐ Vedette</span>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Project Content -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{{ project.title }}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{{ project.description }}</p>
+                        
+                        <!-- Technologies -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {% for tech in project.technology_list %}
+                                <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 rounded-full text-xs font-medium">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <a href="{% url 'portfolio:project_detail' project.id %}" class="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                Voir les détails
+                            </a>
+                            <div class="text-sm text-gray-500 dark:text-gray-500">
+                                {{ project.created_at|date:"d M Y" }}
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {% empty %}
+                <div class="col-span-full text-center py-20">
+                    <div class="max-w-md mx-auto">
+                        <div class="w-20 h-20 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Aucun projet publié</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Les projets seront bientôt disponibles. Revenez plus tard !</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-up">
+        <h2 class="text-4xl font-bold text-white mb-6">Vous avez un projet en tête ?</h2>
+        <p class="text-xl text-indigo-100 mb-8">
+            Discutons de comment je peux vous aider à concrétiser vos idées
+        </p>
+        <a href="{% url 'portfolio:contact' %}" class="inline-flex items-center px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Me contacter
+        </a>
+    </div>
+</section>
+
+<style>
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+{% endblock %}

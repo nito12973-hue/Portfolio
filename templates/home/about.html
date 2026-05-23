@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}À propos — {{ profile.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <h3 class="section-title">À propos</h3>
+  <p class="section-subtitle">Une exploration méthodique des technologies, de l'administration des données et des interfaces.</p>
+  <div class="hero-grid">
+    <article class="project-card">
+      <h3>Ma vision</h3>
+      <p>{{ profile.description }}</p>
+      <ul class="chip-list" style="margin-top: 1rem;">
+        <li><strong>Email :</strong> {{ profile.email }}</li>
+        <li><strong>Téléphone :</strong> {{ profile.phone }}</li>
+        <li><strong>GitHub :</strong> <a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">{{ profile.github }}</a></li>
+      </ul>
+    </article>
+    <article class="project-card">
+      <h3>Centres d'intérêt actifs</h3>
+      <div class="chip-list" style="flex-wrap: wrap;">
+        {% for interest in interests %}
+          <span class="chip">{{ interest.name }}</span>
+        {% empty %}
+          <span class="chip">Curiosité</span>
+        {% endfor %}
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h3 class="section-title">Formation</h3>
+  <p class="section-subtitle">Une base académique solide doublée d'apprentissages pratiques en continu.</p>
+  <div class="project-grid">
+    {% for education in education %}
+      <article class="project-card">
+        <h3>{{ education.title }}</h3>
+        {% if education.institution %}
+          <p><em>{{ education.institution }}</em></p>
+        {% endif %}
+        <p>{{ education.description }}</p>
+      </article>
+    {% empty %}
+      <p>Les détails de la formation ne sont pas encore renseignés.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

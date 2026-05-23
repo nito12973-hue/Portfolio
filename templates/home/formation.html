@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Formation — {{ profile.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+  <h3 class="section-title">Formation</h3>
+  <p class="section-subtitle">Base théorique et pratique nourrie à la fois par les études et le terrain.</p>
+  <div class="project-grid">
+    {% for item in education %}
+      <article class="project-card">
+        <h3>{{ item.title }}</h3>
+        {% if item.institution %}
+          <p><em>{{ item.institution }}</em></p>
+        {% endif %}
+        <p>{{ item.description }}</p>
+      </article>
+    {% empty %}
+      <p>La formation n'a pas encore été renseignée.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
