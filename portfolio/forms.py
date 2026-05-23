@@ -8,8 +8,8 @@ class ContactMessageForm(forms.ModelForm):
         model = ContactMessage
         fields = ["name", "email", "message"]
         widgets = {
-            "name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Lamarana Diallo"}),
-            "email": forms.EmailInput(attrs={"class": "form-control", "placeholder": "lamaranamamadousdiallo@gmail.com"}),
+            "name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Votre nom complet"}),
+            "email": forms.EmailInput(attrs={"class": "form-control", "placeholder": "votre@email.com"}),
             "message": forms.Textarea(
                 attrs={
                     "class": "form-control",

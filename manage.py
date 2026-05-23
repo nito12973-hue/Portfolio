@@ -5,10 +5,7 @@ import sys
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_project.settings')
-    from django import setup
-    from django.core.management import call_command, execute_from_command_line
-
-    setup()
+    from django.core.management import execute_from_command_line
 
     execute_from_command_line(sys.argv)
 

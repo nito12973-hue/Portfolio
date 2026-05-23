@@ -3,7 +3,15 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-portfolio-secret")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+if not SECRET_KEY:
+    import warnings
+    warnings.warn(
+        "DJANGO_SECRET_KEY non défini. Utilisation d'une clé de développement non sécurisée. "
+        "Définissez DJANGO_SECRET_KEY dans les variables d'environnement pour la production.",
+        RuntimeWarning
+    )
+    SECRET_KEY = "dev-portfolio-secret-change-in-production"
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "1").lower() not in {"0", "false", "no"}
 

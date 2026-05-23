@@ -46,8 +46,15 @@ class Profile(TimestampedModel):
             "phone": "+221 77 536 5983",
             "location": "Dakar, Sénégal",
         }
-        profile, _ = cls.objects.get_or_create(pk=1, defaults=defaults)
-        return profile
+        try:
+            profile, _ = cls.objects.get_or_create(pk=1, defaults=defaults)
+            return profile
+        except Exception:
+            # Fallback: get first available profile or create new one
+            profile = cls.objects.first()
+            if profile is None:
+                profile = cls.objects.create(**defaults)
+            return profile
 
 
 class Skill(models.Model):

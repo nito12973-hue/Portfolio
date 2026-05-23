@@ -96,10 +96,10 @@ $action = {
 }
 
 $events = @(
-    Register-ObjectEvent $watcher Changed -Action $action,
-    Register-ObjectEvent $watcher Created -Action $action,
-    Register-ObjectEvent $watcher Deleted -Action $action,
-    Register-ObjectEvent $watcher Renamed -Action $action
+    (Register-ObjectEvent $watcher Changed -Action $action),
+    (Register-ObjectEvent $watcher Created -Action $action),
+    (Register-ObjectEvent $watcher Deleted -Action $action),
+    (Register-ObjectEvent $watcher Renamed -Action $action)
 )
 
 Write-Host "Surveillance active. Les changements seront envoyes apres $DelaySeconds secondes sans nouvelle modification." -ForegroundColor Green
