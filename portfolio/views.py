@@ -50,6 +50,7 @@ def skills(request):
         {
             "profile": Profile.get_solo(),
             "grouped_skills": _group_skills(),
+            "culture": Interest.objects.order_by("order"),
         },
     )
 
