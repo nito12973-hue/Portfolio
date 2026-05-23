@@ -3,7 +3,7 @@ services:
     name: portfolio
     env: python
     plan: starter
-    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py loaddata projects && python manage.py collectstatic --noinput
+    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py loaddata projects portfolio/fixtures/skills_interests.json && python manage.py collectstatic --noinput
     startCommand: gunicorn portfolio_project.wsgi --bind 0.0.0.0:8000
     envVars:
       - key: DJANGO_SECRET_KEY
