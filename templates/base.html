@@ -451,11 +451,100 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+        
+        /* Preloader styles */
+        #preloader {
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+        }
+        
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        .preloader-letter {
+            display: inline-block;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .preloader-letter.animate-in {
+            animation: letterReveal 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+        
+        @keyframes letterReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-10px) scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .preloader-text.animate-in {
+            animation: fadeInUp 0.6s ease-out 0.5s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .preloader-progress.animate-in {
+            animation: fadeInUp 0.6s ease-out 0.7s forwards;
+        }
+        
+        .preloader-progress-bar.animate-in {
+            animation: progressBar 1.5s ease-in-out 0.9s forwards;
+        }
+        
+        @keyframes progressBar {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+        
+        /* Body lock when preloader is active */
+        body.preloader-active {
+            overflow: hidden;
+        }
     </style>
     
     {% block extra_head %}{% endblock %}
 </head>
 <body class="bg-background text-gray-100">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[10000] flex items-center justify-center bg-background">
+        <div class="preloader-content relative">
+            <!-- Glowing orb background -->
+            <div class="preloader-glow absolute inset-0 flex items-center justify-center">
+                <div class="w-40 h-40 rounded-full bg-gradient-to-r from-primary-600 via-accent-500 to-neon-cyan opacity-30 blur-3xl animate-pulse-glow"></div>
+            </div>
+            <!-- Initials container -->
+            <div class="preloader-initials relative flex items-center justify-center space-x-2">
+                <span class="preloader-letter first text-7xl md:text-9xl font-display font-bold text-white opacity-0 transform translate-y-10">L</span>
+                <span class="preloader-letter second text-7xl md:text-9xl font-display font-bold gradient-text opacity-0 transform translate-y-10">D</span>
+            </div>
+            <!-- Loading text -->
+            <p class="preloader-text mt-8 text-center text-gray-400 text-sm uppercase tracking-[0.3em] opacity-0">Chargement</p>
+            <!-- Progress bar -->
+            <div class="preloader-progress mt-4 w-48 h-1 bg-white/10 rounded-full overflow-hidden mx-auto opacity-0">
+                <div class="preloader-progress-bar h-full bg-gradient-to-r from-primary-600 via-accent-500 to-neon-cyan rounded-full animate-shimmer" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Noise texture overlay -->
     <div class="noise-overlay"></div>
     
@@ -617,7 +706,48 @@
     
     <!-- Scripts -->
     <script>
+        // ============================================
+        // PRELOADER - Animated loading screen
+        // ============================================
+        (function() {
+            const preloader = document.getElementById('preloader');
+            const letters = document.querySelectorAll('.preloader-letter');
+            const text = document.querySelector('.preloader-text');
+            const progress = document.querySelector('.preloader-progress');
+            const progressBar = document.querySelector('.preloader-progress-bar');
+            
+            // Lock body scroll while preloader is active
+            document.body.classList.add('preloader-active');
+            
+            // Animate letters with stagger
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    letter.classList.add('animate-in');
+                }, index * 200);
+            });
+            
+            // Animate text and progress bar
+            setTimeout(() => {
+                text.classList.add('animate-in');
+            }, 500);
+            
+            setTimeout(() => {
+                progress.classList.add('animate-in');
+                progressBar.classList.add('animate-in');
+            }, 700);
+            
+            // Hide preloader after content loads
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                    document.body.classList.remove('preloader-active');
+                }, 2000); // 2 seconds total loading time
+            });
+        })();
+        
+        // ============================================
         // Mobile menu toggle
+        // ============================================
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
         

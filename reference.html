@@ -1,0 +1,767 @@
+﻿<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+  	<meta name="description" content="Portfolio créé par Nicolas Wadoux. Etudiant en informatique, je souhaite me spécialiser en développement web et mobile. Je suis actuellement en alternance. Compétences : html, css, php, js, sql, java, rgpd, android, swift, laravel, symfony.">
+    <title>Portfolio | Nicolas wadoux - Étudiant Informatique Web et Mobile</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta creator="Nicolas Wadoux">
+	<meta charset="utf-8">
+	<link rel="sitemap" type="application/xml" href="../sitemap.xml">
+	<link rel="stylesheet" type="text/css" href="../ressources/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../ressources/css/style.css">
+		
+</head><body class="overflow-hidden">
+	<section id="loader">
+		<div id="loader-container">
+			<span>N</span>
+			<span>W</span>
+		</div>
+	</section>
+	<main>
+		<header class="header">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-custom">
+			  <div class="container-fluid">
+			    <a class="navbar-brand"  data-nw-href="#homeScreen" role="button">NW</a>
+			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			      <ul class="navbar-nav ms-auto">
+			        <li class='nav-item'>
+						<a data-nw-href="#aboutScreen" class="nav-link" role="button">À propos</a>
+					</li>
+					<li class='nav-item'>
+						<a data-nw-href="#competencesScreen" class="nav-link" role="button">Compétences</a>
+					</li>
+					<li class='nav-item'>
+						<a data-nw-href="#qualificationsScreen" class="nav-link" role="button">Diplômes</a>
+					</li>
+					<li class='nav-item'>
+						<a data-nw-href="#portfolioScreen" class="nav-link" role="button">Portfolio</a>
+					</li>
+					<li class='nav-item'>
+						<a data-nw-href="#referencesScreen" class="nav-link" role="button">Références</a>
+					</li>
+					<li class='nav-item'>
+						<a data-nw-href="#contactScreen" class="nav-link" role="button">Me contacter</a>
+					</li>
+					<li class='nav-item'>
+						<a href="../ressources/download/CV-Nicolas_Wadoux-Français" target="_blank" class="nav-link">CV <i class="fa fa-download"></i></a>
+					</li>
+			        <li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">	&#127757;
+			            Fr			          </a>
+			          <ul class="dropdown-menu" id="dropdownLang" aria-labelledby="navbarDropdown">
+			            <li><a href="/"><button class="dropdown-item" name='lang' value="fr">Français</button></a></li>
+			            <li><a href="../en"><button class="dropdown-item" name='lang' value="en">English</button></a></li>
+			            <li><a href="../es"><button class="dropdown-item" name='lang' value="es">Español</button></a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+
+		</header>
+		<!-- HOME -->
+	  <section class='screen' >
+	  	<div class='screen 2backgroundImage 2clipInvertDownRectangle' id='homeScreen'>
+	  		<section id="home-paralax">
+<!--	  			<img src="./ressources/images/Mont-Blanc.jpg" id='mont-blanc'>
+	  			<img src="./ressources/images/parachutist.png" id='parachutist'>
+ 	  			<img src="./ressources/images/trees.png" id='trees'>
+ -->	  		</section>
+	  		<div id='homeContent'>
+	  			<h1 id='home_name'>Nicolas Wadoux</h1>
+	  			<p id='home_status'>Étudiant Informatique Web et Mobile</p>
+	  		</div>
+	  	</div>
+	  </section>
+
+	  <!-- About me -->
+	  <section class='screen' id='aboutScreen'>
+	  	<div class='spacermenu'></div>
+			<h1 class='sectionTitle h1-spacer-under'>À propos</h1>
+			<div class="screenCenterContent container">
+				<div class='row'>
+	  			<div class="pic_container col-md-1">
+	  				<div class="picContent">
+			  			<span class="pic_back pic_element"></span>
+			  			<div id="profil_pic" class="pic_element"></div>
+	  				</div>
+	  			</div>
+	  			
+	  			<div id="about_p_container" class='col-md'>
+	  				<nav class='btn_nav'>
+	  					<ul>
+	  						<li data-nw-id-target='about_presentation_p' data-nw-classGroup="about_p" class="js_show_btn selected_btn">Présentation</li>
+	  						<li data-nw-id-target='about_languages_p' data-nw-classGroup="about_p" class="js_show_btn">Langues</li>
+	  						<li data-nw-id-target='about_softskills_p' data-nw-classGroup="about_p" class="js_show_btn">Soft skills</li>
+	  						<li data-nw-id-target='about_hobbies_p' data-nw-classGroup="about_p" class="js_show_btn">Passions</li>
+	  					</ul>
+	  				</nav>
+	  				<div class="box_style about_p" id="about_presentation_p">
+	  					<p class='p-spacer-under'>Actuellement en licence professionnelle Développeur Informatique Multisupport, en alternance, je suis un jeune étudiant souhaitant se spécialisant dans le développement web et mobile. J’oriente mes études dans ce domaine, guidé par mon désir d'apprendre et ma curiosité. En tant que passionné, j’aime participer activement aux activités d’une entreprise, mais aussi créer des projets personnels, dans le but d'augmenter en compétences.</p>
+	  					<p class='p-spacer-under'>Le développement web et mobile est apparu comme une évidence lors de mes formations. Créer des applications web toujours plus durables, soucieuses de l'experience utilisateur et de plus en plus performantes, est un enjeu actuel très important et d'avenir. Le mobile change notre quotidien, il y prend une place de plus en plus importante. Je veux prendre part à ce changement.</p>
+	  					<p>Si vous souhaitez en apprendre plus sur moi, ou me contacter, n'hésitez plus, vous pouvez explorer ce site ou télécharger mon CV ! :)</p>
+	  				</div>
+	  				<div class="box_style about_p hidden" id="about_languages_p">
+	  					<div>
+	  						<img class="flagImage" src="../ressources/images/FR.png" alt="Français">
+	  						<h3>Français</h3>
+	  						<p>Langue Maternelle</p>
+	  					</div>
+	  					<div>
+	  						<img class="flagImage" src="../ressources/images/UK.png" alt="Anglais">
+	  						<h3>Anglais</h3>
+	  						<p>Niveau B2 - TOEIC 925</p>
+	  					</div>
+	  					<div>
+	  						<img class="flagImage" src="../ressources/images/ES.png" alt="Espagnol">
+	  						<h3>Espagnol</h3>
+	  						<p>Niveau B1+</p>
+	  					</div>
+	  				</div>
+	  				<div class="box_style about_p hidden" id="about_softskills_p">
+	  					<ul>
+	  						<li><h3>Intelligence émotionnelle</h3> : Je suis quelqu'un d'empathique, sympathique et toujours optimiste</li>
+	  						<li><h3>Intelligence relationnelle</h3> : Esprit d'équipe, agit toujours pour maintenir une coopération positive</li>
+	  						<li><h3>Curiosité</h3> : J'aime toujours en apprendre plus sur tous les sujets</li>
+	  						<li><h3>Ponctualité</h3> et bonne <h3>gestion du temps</h3></li>
+	  						<li><h3>Capacité de résolution </h3> : J'aime trouver la solution la plus simple pour répondre à un besoin, que ce soit seul ou en équipe</li>
+	  					</ul>
+	  				</div>
+	  				<div class="box_style about_p hidden" id="about_hobbies_p">
+	  					<div class='container-fluid'>
+	  						<div class='row'>
+	  							<h3>- Jouer du violon -</h3>
+	  							<p>Je joue du violon depuis 2016.</p>
+	  							<p class='p-spacer-under'>J'ai participé à des œuvres de charité comme "Octobre Rose", ou encore sur scène, lors de repas seniors durant les fêtes de noël, mais aussi des concerts dans des bars !</p>
+	  						</div>
+	  						<div class='row'>
+	  							<h3>- Voyager / Culture -</h3>
+	  							<p class='p-spacer-under'>J'aimerais un jour faire le tour du monde, les autres pays et leur culture me passionnent. Sans oublier la culture culinaire ;p</p>
+	  						</div>
+	  						<div class='row'>
+	  							<h3>- Pâtisserie -</h3>
+	  							<p>En parlant de nourriture, qui n'aime pas les gâteaux ? Buches, verrines, choux, macarons, j'adore pâtisser !</p>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+				</div>
+			</div>
+	  </section>
+
+	  	<!-- Competences -->
+	  <section class='screen'>
+			<div class='screen clipRectangles' id='competencesScreen'>
+				<div class='spacermenu'></div>
+				<h1 class='h1WhiteBefAft sectionTitle h1-spacer-under'>Compétences</h1>
+				<div class="screenCenterContent container-fluid max-w-1400">
+					<div class='row'>
+						<div class='col-md-3 col-sm-6'>
+	  					<div class='competencesCard'>
+	  						<div class='competencesCard-header'>
+	  							<h2>Web</h2>
+	  						</div>
+	  						<div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>HTML / CSS / JS</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">85 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>PHP</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">80 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Angular</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">75 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Laravel / Symfony</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">75 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>NodeJs</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">70 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>WordPress</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">50 %</div>
+		  							</div>
+	  							</div>
+	  						</div>
+							</div>
+						</div>
+						<div class='col-md-3 col-sm-6'>
+	  					<div class='competencesCard'>
+	  						<div class='competencesCard-header'>
+	  							<h2>Base de données</h2>
+	  						</div>
+	  						<div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>MySQL</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">85 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>PgSQL</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">80 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>PL/SQL</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">60 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Oracle</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">80 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>PDO</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">90 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Merise</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">85 %</div>
+		  							</div>
+	  							</div>
+	  						</div>
+							</div>
+						</div>
+						<div class='col-md-3 col-sm-6'>
+							<div class='competencesCard'>
+	  						<div class='competencesCard-header'>
+	  							<h2>Programmation</h2>
+	  						</div>
+	  						<div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>C#</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">70 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Kotlin (Android)</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">70 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Java</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">65 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Flutter</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">55 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>UML</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">85 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Python</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">50 %</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+						</div>
+						<div class='col-md-3 col-sm-6'>
+							<div class='competencesCard'>
+	  						<div class='competencesCard-header'>
+	  							<h2>Autres</h2>
+	  						</div>
+	  						<div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>RGPD</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">70 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Odoo</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">65 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Adobe XD</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">75 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Scrum</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">85 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Photoshop</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">50 %</div>
+		  							</div>
+	  							</div>
+	  							<div class='progressContainer'>
+	  								<p class='progressLabel'>Git</p>
+		  							<div class="progress">
+		  								<div class='progress-bar' role='progressbar' aria-valuemin="0" aria-valuemax="100">70 %</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+	  </section>
+
+	  	<!-- Qualifications -->
+	  <section class='screen' id='qualificationsScreen'>
+	  	<div class='spacermenu'></div>
+	  	<h1 class='sectionTitle'>Diplômes</h1>
+	  	<div id='qualifContent'>
+	  		<span class='timeLine'></span>
+	  		<div class="qualif fade-in-out">
+	  			<h2>Mastère Ingénierie du Web</h2>
+	  			<span class="portfolioCard-spacer"></span>
+	  			<div class="qualifText">
+	  				<p>Mastère spécialisé en développement web (bac +5)</p>
+	  				<p>École Supérieure de Génie Informatique - Paris XII, France</p>
+	  			</div>
+	  			<p class="qualifDate">2022 - 2024</p>
+	  		</div>
+			<div class="qualif fade-in-out">
+	  			<h2>Licence Professionnelle DIM</h2>
+	  			<span class="portfolioCard-spacer"></span>
+	  			<div class="qualifText">
+	  				<p>Licence Développeur Informatique Multisupport en alternance (bac +3)</p>
+	  				<p>Université Savoie Mont-Blanc - IUT Annecy-Le-Vieux & L'école by CCI - Annecy, France</p>
+	  			</div>
+	  			<p class="qualifDate">2021 - 2022</p>
+	  		</div>
+	  		<div class="qualif fade-in-out">
+	  			<h2>DUT Informatique</h2>
+	  			<span class="portfolioCard-spacer"></span>
+	  			<div class="qualifText">
+	  				<p>Diplôme Universitaire d'Informatique (bac +2)</p>
+	  				<p>Université Savoie Mont-Blanc - IUT Annecy-Le-Vieux, France</p>
+	  			</div>
+	  		  	<p class="qualifDate">2019 - 2021</p>
+			</div>
+	  		<div class="qualif fade-in-out">
+	  			<h2>Baccalauréat Scientifique</h2>
+	  			<span class="portfolioCard-spacer"></span>
+	  			<div class="qualifText">
+	  				<p>Diplôme spécialisé en sciences - Mention Bien</p>
+	  				<p>Options : ISN (Informatique et Sciences du Numérique) et Musique</p>
+	  				<p>Lycée Guillaume Fichet - Bonneville, France</p>
+	  			</div>
+	  			<p class="qualifDate">2016 - 2019</p>
+	  		</div>
+	  	</div>
+	  </section>
+
+	  	<!-- Portfolio -->
+	  <section class='screen'>
+	  	<div class='screen clipRectangles' id='portfolioScreen'>
+	  		<div class='spacermenu'></div>
+			<h1 class='h1WhiteBefAft sectionTitle'>Portfolio</h1>
+			<div class='container-fluid'>
+				<div class='row'>
+					<nav class='btn_nav' id='portfolioNav'>
+	  					<ul>
+	  						<li data-nw-id-target='portfolioPerso' data-nw-classGroup="portfolioGroup" class="js_show_btn">Projets personnels</li>
+	  						<li data-nw-id-target='portfolioPro' data-nw-classGroup="portfolioGroup" class="js_show_btn selected_btn portfolioPro">Projets professionnels</li>
+	  					</ul>
+	  				</nav>
+				</div>
+				<div class='row hidden portfolioGroup screenCenterContent max-w-1400' id='portfolioPerso'>
+					<div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2>La Toquerie</h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img src="../ressources/images/Toquerie.svg"  alt="Image représentation de la Toquerie">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">En cours de développement</p>
+		  								<p class="p-spacer-under">Un projet ayant pour but d'apprendre les bonnes pratiques pour le développement d'une API Laravel et d'un client Angular.</p>
+		  								<p>L'idée de ce projet se résume en un site permettant de trouver des recettes, convenant à différents critères. Il sera aussi possible de partager des recettes avec un groupe d'utilisateurs, comme pour le partage de recettes familiales, permettant ainsi la création de livre de recettes numériques.</p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='jsCaps'>Angular</li>
+	  								<li class='phpCaps'>API Laravel</li>
+	  								<li class='sqlCaps'>SQL</li>
+	  								<li class='wpCaps'>RGPD</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div>
+					<div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2>Portfolio v2</h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img src="../ressources/images/portfolio2.PNG" alt="Image représentation de ce portfolio">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">Toujours en cours de développement</p>
+		  								<p class="p-spacer-under">Un nouveau portfolio totalement responsive, grâce auquel j'ai appris à utiliser BootStrap.</p>
+		  								<p class="p-spacer-under">Le deuxième but de ce portfolio était de créer une maquette sur AdobeXD puis réaliser le plus fidèlement possible le site.</p>
+		  								<p class="p-spacer-under">Enfin, ce site m'a permis de mettre en place un système multilingue. Mais aussi de gérer son référencement.</p>
+		  								<p><a href="https://xd.adobe.com/view/75b20a3e-01e2-49a2-a859-fcd523e37cd0-20e1/" rel="noopener" target="_blank">- Voir la maquette -</a></p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='htmlCaps'>HTML/CSS</li>
+	  								<li class='phpCaps'>PHP</li>
+	  								<li class='jsCaps'>JS</li>
+	  								<li class='wpCaps'>BootStrap</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div>
+	  				<div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2>Etu'Cuisine</h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img src="../ressources/images/etucuisine.PNG" alt="Image représentation d'Etu'cuisine">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">11/2019</p>
+		  								<p class="p-spacer-under">Mon tout premier projet, un site répertoriant plusieurs recettes pour les étudiants en lien avec une base de données.</p>
+		  								<p class="p-spacer-under">Ce site à servit à apprendre à concevoir une base de donnée et à l'utiliser avec PHP.</p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='htmlCaps'>HTML/CSS</li>
+	  								<li class='phpCaps'>PHP</li>
+	  								<li class='sqlCaps'>SQL</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div>
+				</div>
+				<div class='row portfolioGroup screenCenterContent max-w-1400' id='portfolioPro'>
+					<div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2>Billetterie Infomaniak</h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img id="infomaniakPic" src="../ressources/images/infomaniak.png" alt="Image représentation Billetterie Infomaniak">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">01/04/2021 - Aujourd'hui</p>
+		  								<p class="p-spacer-under">Dans le cadre du stage en DUT, puis de l'alternance, j'ai travaillé chez Infomaniak, pour le produit Billetterie, dans une équipe de 6.</p>
+		  								<p class="p-spacer-under">Ce produit permet à des organisateurs de créer, vendre, gérer et controller leurs évènements, sur une application Laravel, Stencil, AngularJS et Angular.</p>
+		  								<p>J'ai pu, par exemple, travailler sur la mise en place de promotions, d'une API avec des tourniquets, d'échange de billets, etc.</p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='phpCaps'>Laravel</li>
+	  								<li class='jsCaps'>Angular</li>
+	  								<li class='stencilCaps'>Stencil</li>
+	  								<li class='wpCaps'>Scrum</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div>
+					<div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2>Kili</h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img src="../ressources/images/kili.PNG" alt="Image représentation de Kili">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">05/2020 - 03/2021</p>
+		  								<p class="p-spacer-under">Projet tutoré dans le cadre de mon DUT</p>
+		  								<p>En équipe de 5, nous devions concevoir et réaliser un site d'échange de livres (design, BDD, modèles, Cahier des charges, ...)</p>
+		  								<p class="p-spacer-under">Grâce à AdobeXD, nous avons créé le design du site en Mobile First.</p>
+		  								<p class="p-spacer-under">En tant que chef de projet, j'ai dû maintenir le contact avec le client et coordonner notre équipe.</p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='htmlCaps'>HTML/CSS</li>
+	  								<li class='phpCaps'>PHP</li>
+	  								<li class='sqlCaps'>SQL</li>
+	  								<li class='wpCaps'>WordPress</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div>
+	  				<div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2>Portfolio V1</h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img src="../ressources/images/portfolio.PNG"  alt="Image représentation du portfolio">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">11/2020</p>
+		  								<p class="p-spacer-under">Un portfolio responsive créé pour un travail mêlant anglais et programmation, avec obligation de n'utiliser ni framework ni librairie.</p>
+		  								<p class="p-spacer-under">Créé en environ 30h.</p>
+		  								<p><a href="/portfolioV1" rel="noopener" target="_blank">- Aller voir -</a></p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='htmlCaps'>HTML/CSS</li>
+	  								<li class='jsCaps'>JS Natif</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div>
+	  				<!-- <div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2></h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img src="../ressources/images/tripadAlike.png" alt="">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">10/2020</p>
+		  								<p class="p-spacer-under"></p>
+		  								<p></p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='phpCaps'>Laravel</li>
+	  								<li class='wpCaps'>Scrum</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div> -->
+	  				<div class='col-md col-sm'>
+	  					<div class='portfolioCard'>
+	  						<div class='portfolioCard-header'>
+	  							<h2>ZoneSki</h2>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-content'>
+	  							<div class="flip-image">
+	  								<img src="../ressources/images/logoSki.png"  alt="Image représentation Zoneski">
+	  							</div>
+	  							<div class="flip-content">
+	  								<div>
+		  								<p class="p-spacer-under">01/2019, pendant une semaine</p>
+		  								<p class="p-spacer-under">Premier prix d'une semaine concours.</p>
+		  								<p class="p-spacer-under">En équipe de 6, après seulement 4 mois de formation en développement, nous avons dû créer un site web de A à Z.</p>
+		  								<p>Nous devions faire attention à la sémiotique, à la communication et à la rédaction des pages.</p>
+		  								<p><a href="http://dut-info-annecy.fr/ZoneSki" rel="noopener" target="_blank">- Aller voir -</a></p>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<span class='portfolioCard-spacer'></span>
+	  						<div class='portfolioCard-footer'>
+	  							<ul class='portfolioCard-footer-list'>
+	  								<li class='htmlCaps'>HTML/CSS</li>
+	  								<li class='phpCaps'>PHP</li>
+	  								<li class='sqlCaps'>SQL</li>
+	  							</ul>
+	  						</div>
+	  					</div>
+	  				</div>
+				</div>
+			</div>
+	  	</div>
+	  </section>
+
+	  	<!-- References -->
+	  <section class='screen' id='referencesScreen'>
+	  	<div class='spacermenu'></div>
+		<h1 class='sectionTitle'>Références</h1>
+		<div id='ref_content' class='max-w-1400 container-fluid screenCenterContent'>
+			<div class='row'>
+				<div class='col-sm ref_side'>
+					<div class='pic_container Itemcenter'>
+						<div class="picContent">
+				  			<span class="pic_back pic_element"></span>
+				  			<div id="first_ref_pic" class="pic_element"></div>
+				  		</div>
+				  	</div>
+			  		<div class='ref_description Itemcenter'>
+			  			<h2>Stéphanie Bouchon</h2>
+			  			<p>Professeure d'anglais</p>
+			  			<p>Communiquer et travailler en anglais</p>
+			  			<p>IUT Annecy, USMB, France</p>
+			  			<p class='mail_ref'><a href="mailto:stephanie.bouchon@univ-savoie.fr">stephanie.bouchon@univ-savoie.fr</a></p>
+			  		</div>
+				</div>
+				<div class='col-sm ref_side'>
+					<div class='pic_container Itemcenter'>
+						<div class="picContent">
+				  			<span class="pic_back pic_element"></span>
+				  			<div id="scdn_ref_pic" class="pic_element"></div>
+						</div>
+					</div>	
+					<div class='ref_description Itemcenter'>
+						<h2>Pascal Colin</h2>
+			  			<p>Professeur d'informatique</p>
+			  			<p>Base de données, architecture logicielle</p>
+			  			<p>IUT Annecy, USMB, France</p>
+			  			<p class='mail_ref'><a href="mailto:pascal.colin@univ-savoie.fr">pascal.colin@univ-savoie.fr</a></p>
+			  		</div>
+				</div>	
+			</div>
+			
+		</div>
+	  </section>
+
+	  	<!-- Contact -->
+	  <section class='screen'>
+	  	<div class='screen clipUpRectangle' id='contactScreen'>
+	  		<div class='spacermenu'></div>
+	  		<h1 class='sectionTitle'>Me contacter</h1>
+	  		<div class='container-fluid screenCenterContent max-w-1400'>
+	  			<div class='row'>
+	  				<div class='col text-center' id='getintouch'>
+	  					<p>Un projet ? En plein recrutement ? Envie de dire bonjour ?</p> 
+	  					<p>N'hésitez plus, entrons en contact !</p>
+	  				</div>	  				
+	  			</div>
+	  			<div class='row'>
+		  			<div class='col-sm'>
+		  				<form id="contact_form" action="../mail.php" method='post'>
+							<p>
+								<label for="email" class='hidden'>Votre mail</label>
+								<input class='input_contact' type="email" name="email" id="email" placeholder="Votre mail">
+							</p>
+							<p>
+								<label for="object" class='hidden'>Objet</label>
+								<input class='input_contact' type="text" name="object" id="object" placeholder="Objet">
+							</p>
+							<p>
+								<label for="msg">Message</label>
+								<textarea id="msg" name="msg" rows='9'></textarea>
+							</p>
+							<p id='robot_check'>
+								<label for='check'>5 - 1 =</label>
+								<input class='input_contact' type="number" name="check" id="check">
+							</p>
+							<div id="sendBtnContact">
+								<span class="contact_caps tenDRotated" id='bg_contact_sendBtn'></span>
+								<input class="contact_caps" type="submit" id="contact_sendBtn" value="Envoyer"/>
+							</div>	
+							<div id="mail_statut">
+								<p id="mail_statut_success" class="mail_alert alert-success hidden">Mail envoyé avec succès ! Je vous contacterai dans la semaine</p>
+								<p id="mail_statut_error" class="mail_alert alert-danger hidden">Une erreur est survenue, merci de bien renseigner tous les champs</p>
+							</div>
+							<div>
+								<p data-nw-id-target='gdpr_p' id='gdpr_btn' class="js_toggle_btn helpBtn">Données personnelles</p>
+								<p id='gdpr_p' class='hidden'>
+									Conformément au RGPD, les données collectées par ce formulaire servent uniquement afin d'entrer en contact, par mail. Je pourrais être amené à conserver notre prochain échange de mail et les données personnelles afférentes. L'unique finalité de ces données est bien d'entrer en contact et d'échanger. Jamais les données reçues par le biais de ce formulaire ou de nos futurs échanges ne seront utilisées hors de ce contexte, sans votre consentement. Vous bénéficiez d'un droit de suppression de ces mails et de leurs données à tous moments. Il suffit pour cela de me contacter afin que je supprime tous nos échanges.								</p>
+							</div>					
+						</form>
+
+		  			</div>
+		  			<div class='col-sm'>
+		  				<a class='contact_caps_a' rel='noopener' href="https://www.linkedin.com/in/nicolas-wadoux-5b8271193/" target='_blank'>
+		  					<div class="contact_caps clickableBtn">
+			  					<img class="contact_caps_pic" src="../ressources/images/linkedin.png" alt="LinkedIn icon">
+			  					<p class="contact_caps_p">Nicolas Wadoux</p>
+			  				</div>
+		  				</a>
+		  				<a class='contact_caps_a' href="../ressources/download/CV-Nicolas_Wadoux-Français" target="_blank">
+		  					<div class="contact_caps clickableBtn">
+			  					<img class="contact_caps_pic" src="../ressources/images/dl.png" alt='Download icon'>
+			  					<p class="contact_caps_p">Téléchargez ici mon CV</p>
+			  				</div>
+		  				</a>
+		  			</div>
+		  		</div>
+	  		</div>
+		</div>
+	  </section>
+	</main>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="../ressources/bootstrap/js/bootstrap.js"></script>
+<script src="../ressources/js/main.js?1"></script>
+<script src="../ressources/js/mail.js"></script>
+</html>
+
