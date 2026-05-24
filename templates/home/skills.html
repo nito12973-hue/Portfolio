@@ -58,10 +58,10 @@
                     <!-- Skills List -->
                     <div class="space-y-4">
                         {% for skill in category.items %}
-                            <div class="skill-item flex items-center justify-between p-4 rounded-2xl glass-light hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-primary-500/30">
+                            <div class="skill-item flex items-center justify-between p-4 rounded-2xl bg-white/10 hover:bg-white/15 transition-all duration-300 border border-white/20 hover:border-primary-500/50">
                                 <div class="flex items-center space-x-4">
-                                    <div class="w-3 h-3 rounded-full {% if forloop.counter == 1 %}bg-primary-400 glow-violet{% elif forloop.counter == 2 %}bg-accent-400 glow-pink{% elif forloop.counter == 3 %}bg-neon-cyan glow-cyan{% else %}bg-neon-green glow-green{% endif %}"></div>
-                                    <span class="text-gray-300 font-semibold text-base">{{ skill.name }}</span>
+                                    <div class="w-3 h-3 rounded-full {% if forloop.counter == 1 %}bg-primary-400{% elif forloop.counter == 2 %}bg-accent-400{% elif forloop.counter == 3 %}bg-neon-cyan{% else %}bg-neon-green{% endif %}"></div>
+                                    <span class="text-white font-semibold text-base">{{ skill.name }}</span>
                                 </div>
                                 {% if skill.level %}
                                     <span class="text-sm text-gray-500 font-medium">{{ skill.level }}%</span>

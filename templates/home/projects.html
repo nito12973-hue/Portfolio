@@ -73,7 +73,7 @@
                             <!-- Technologies -->
                             <div class="flex flex-wrap gap-2 mb-5">
                                 {% for tech in project.technology_list|slice:":4" %}
-                                    <span class="px-4 py-2 rounded-full text-xs font-semibold glass-light text-gray-300 border border-white/5 hover:border-primary-500/30 transition-colors">{{ tech }}</span>
+                                    <span class="px-4 py-2 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/20 hover:border-primary-500/50 transition-colors">{{ tech }}</span>
                                 {% endfor %}
                             </div>
                             
@@ -83,7 +83,7 @@
                             </h3>
                             
                             <!-- Description -->
-                            <p class="text-gray-400 mb-6 line-clamp-3 text-base leading-relaxed">{{ project.description }}</p>
+                            <p class="text-gray-300 mb-6 line-clamp-3 text-base leading-relaxed">{{ project.description }}</p>
                             
                             <!-- Meta info -->
                             <div class="flex items-center justify-between pt-6 border-t border-white/10">
