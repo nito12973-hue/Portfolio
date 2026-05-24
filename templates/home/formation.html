@@ -3,21 +3,74 @@
 {% block title %}Formation — {{ profile.name }}{% endblock %}
 
 {% block content %}
-<section class="section">
-  <h3 class="section-title">Formation</h3>
-  <p class="section-subtitle">Base théorique et pratique nourrie à la fois par les études et le terrain.</p>
-  <div class="project-grid">
-    {% for item in education %}
-      <article class="project-card">
-        <h3>{{ item.title }}</h3>
-        {% if item.institution %}
-          <p><em>{{ item.institution }}</em></p>
-        {% endif %}
-        <p>{{ item.description }}</p>
-      </article>
-    {% empty %}
-      <p>La formation n'a pas encore été renseignée.</p>
-    {% endfor %}
-  </div>
+<!-- Header Section -->
+<section class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center animate-slide-up">
+            <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                <span class="gradient-text">Ma Formation</span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                Un parcours académique solide complété par des apprentissages pratiques continus
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for item in education %}
+                <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl shadow-lg card-hover animate-slide-up" style="animation-delay: {{ forloop.counter0|floatformat:1 }}s;">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{{ item.title }}</h3>
+                    
+                    {% if item.institution %}
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4">{{ item.institution }}</p>
+                    {% endif %}
+                    
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{{ item.description }}</p>
+                </div>
+            {% empty %}
+                <div class="col-span-full text-center py-20">
+                    <div class="max-w-md mx-auto">
+                        <div class="w-20 h-20 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Formation non renseignée</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Les détails de la formation seront bientôt disponibles.</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-up">
+        <h2 class="text-4xl font-bold text-white mb-6">Vous avez un projet ?</h2>
+        <p class="text-xl text-indigo-100 mb-8">
+            Mon parcours académique et mes compétences techniques sont au service de vos projets
+        </p>
+        <a href="{% url 'portfolio:contact' %}" class="inline-flex items-center px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Me contacter
+        </a>
+    </div>
 </section>
 {% endblock %}

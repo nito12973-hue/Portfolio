@@ -6,7 +6,7 @@
       "title": "SunuMarket",
       "description": "Plateforme e-commerce moderne adaptee au Senegal avec catalogue produits, authentification, panier, commandes, espace administrateur, gestion du stock et securisation des parcours.",
       "technologies": ["Next.js", "React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JWT"],
-      "link": "https://projet-frontend-liard.vercel.app",
+      "link": "https://github.com/nito12973-hue/projet",
       "featured": true,
       "created_at": "2026-02-24T08:03:34Z",
       "updated_at": "2026-03-12T23:12:54Z"
@@ -16,13 +16,13 @@
     "model": "portfolio.project",
     "pk": 2,
     "fields": {
-      "title": "Portfolio ASP.NET Core MVC",
-      "description": "Portfolio personnel complet avec pages publiques, gestion dynamique du profil et des projets via fichiers JSON, formulaires d'administration proteges par cle et interface Bootstrap personnalisee.",
-      "technologies": ["ASP.NET Core MVC", "C#", "Bootstrap", "JSON"],
-      "link": "https://github.com/nito12973-hue/Portfolio",
+      "title": "Gestion Scolarité",
+      "description": "Plateforme de gestion de la scolarité pour les établissements universitaires, permettant aux étudiants de gérer leur parcours académique et aux administrateurs de suivre les inscriptions.",
+      "technologies": ["Django", "Python", "PostgreSQL", "React", "Tailwind CSS", "REST API"],
+      "link": "https://github.com/nito12973-hue/Gestion_Scolarite",
       "featured": false,
-      "created_at": "2026-03-12T23:19:02Z",
-      "updated_at": "2026-03-13T01:03:32Z"
+      "created_at": "2026-03-15T10:00:00Z",
+      "updated_at": "2026-03-20T15:30:00Z"
     }
   }
 ]

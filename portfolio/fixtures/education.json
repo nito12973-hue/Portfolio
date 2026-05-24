@@ -1,0 +1,42 @@
+[
+  {
+    "model": "portfolio.education",
+    "pk": 1,
+    "fields": {
+      "title": "Master en Informatique",
+      "institution": "Université Cheikh Anta Diop",
+      "description": "Spécialisation en développement web et bases de données. Projets académiques sur les architectures modernes et les systèmes distribués.",
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 2,
+    "fields": {
+      "title": "Licence en Informatique",
+      "institution": "Université Cheikh Anta Diop",
+      "description": "Formation fondamentale en algorithmique, structures de données, programmation orientée objet et systèmes d'exploitation.",
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 3,
+    "fields": {
+      "title": "Certification AWS Cloud Practitioner",
+      "institution": "Amazon Web Services",
+      "description": "Certification validant les connaissances fondamentales des services cloud AWS, incluant EC2, S3, RDS et Lambda.",
+      "order": 3
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 4,
+    "fields": {
+      "title": "Certification Django Developer",
+      "institution": "Django Software Foundation",
+      "description": "Maîtrise avancée du framework Django : ORM, middleware, signals, authentification et déploiement en production.",
+      "order": 4
+    }
+  }
+]

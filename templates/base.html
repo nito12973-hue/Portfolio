@@ -316,47 +316,52 @@
             animation: float 10s ease-in-out infinite;
         }
         
-        /* Reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
+        /* Reveal animation (visible by default for no-JS fallback) */
+        .reveal,
+        .reveal-left,
+        .reveal-right,
+        .reveal-scale {
+            opacity: 1;
+            transform: none;
             transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
         }
         
-        .reveal.active {
+        body.js-enabled .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        body.js-enabled .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
         
-        .reveal-left {
+        body.js-enabled .reveal-left {
             opacity: 0;
             transform: translateX(-50px);
-            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
         }
         
-        .reveal-left.active {
+        body.js-enabled .reveal-left.active {
             opacity: 1;
             transform: translateX(0);
         }
         
-        .reveal-right {
+        body.js-enabled .reveal-right {
             opacity: 0;
             transform: translateX(50px);
-            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
         }
         
-        .reveal-right.active {
+        body.js-enabled .reveal-right.active {
             opacity: 1;
             transform: translateX(0);
         }
         
-        .reveal-scale {
+        body.js-enabled .reveal-scale {
             opacity: 0;
             transform: scale(0.9);
-            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
         }
         
-        .reveal-scale.active {
+        body.js-enabled .reveal-scale.active {
             opacity: 1;
             transform: scale(1);
         }
@@ -743,6 +748,14 @@
                     document.body.classList.remove('preloader-active');
                 }, 2000); // 2 seconds total loading time
             });
+
+            // If the page load event does not fire for any reason, remove the preloader after a timeout
+            setTimeout(() => {
+                if (!preloader.classList.contains('hidden')) {
+                    preloader.classList.add('hidden');
+                    document.body.classList.remove('preloader-active');
+                }
+            }, 8000);
         })();
         
         // ============================================
@@ -804,6 +817,9 @@
             });
         });
         
+        // Enable JS-based reveal animations only when JS runs successfully
+        document.body.classList.add('js-enabled');
+        
         // Reveal animations on scroll
         const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
         
@@ -823,10 +839,10 @@
         
         // GSAP ScrollTrigger registration
         gsap.registerPlugin(ScrollTrigger);
-        
+
         // Hero animations with stagger
         const heroTimeline = gsap.timeline();
-        
+
         heroTimeline
             .from('.hero-badge', {
                 duration: 1,
@@ -858,7 +874,7 @@
                 y: 30,
                 opacity: 0,
                 ease: 'power3.out',
-            }, '-=0.6')
+            })
             .from('.hero-cta', {
                 duration: 0.8,
                 scale: 0.9,

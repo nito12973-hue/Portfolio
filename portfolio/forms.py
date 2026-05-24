@@ -8,13 +8,23 @@ class ContactMessageForm(forms.ModelForm):
         model = ContactMessage
         fields = ["name", "email", "message"]
         widgets = {
-            "name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Votre nom complet"}),
-            "email": forms.EmailInput(attrs={"class": "form-control", "placeholder": "votre@email.com"}),
+            "name": forms.TextInput(
+                attrs={
+                    "class": "w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors",
+                    "placeholder": "Votre nom complet",
+                }
+            ),
+            "email": forms.EmailInput(
+                attrs={
+                    "class": "w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors",
+                    "placeholder": "votre@email.com",
+                }
+            ),
             "message": forms.Textarea(
                 attrs={
-                    "class": "form-control",
+                    "class": "w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors resize-none",
                     "rows": 5,
-                    "placeholder": "Racontez votre projet, vos besoins ou une collaboration souhaitée",
+                    "placeholder": "Décrivez votre projet ou votre demande...",
                 }
             ),
         }
