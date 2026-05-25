@@ -3,7 +3,7 @@ services:
     name: portfolio
     env: python
     plan: starter
-    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py loaddata projects portfolio/fixtures/skills_interests.json && python manage.py collectstatic --noinput
+    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py loaddata projects portfolio/fixtures/skills_interests.json && python manage.py create_admin_user && python manage.py collectstatic --noinput
     startCommand: gunicorn portfolio_project.wsgi --bind 0.0.0.0:8000
     envVars:
       - key: DJANGO_SECRET_KEY
@@ -12,3 +12,9 @@ services:
         value: "0"
       - key: DJANGO_ALLOWED_HOSTS
         value: ".onrender.com"
+      - key: DJANGO_ADMIN_USERNAME
+        sync: false
+      - key: DJANGO_ADMIN_EMAIL
+        sync: false
+      - key: DJANGO_ADMIN_PASSWORD
+        sync: false
