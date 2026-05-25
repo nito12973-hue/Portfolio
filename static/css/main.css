@@ -314,13 +314,99 @@ body {
   color: #0c4a7d;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .main-nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .main-nav a {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    margin-top: 0.5rem;
   }
 
   .hero-actions {
     flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .site-main {
+    padding: 2rem 1rem;
+  }
+
+  .section {
+    margin: 0 auto 2rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-stack {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-brand h1 {
+    font-size: 1.2rem;
+  }
+
+  .site-brand span {
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .stat-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .chip-list {
+    gap: 0.25rem;
+  }
+
+  .chip {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
   }
 }
